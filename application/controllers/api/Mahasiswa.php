@@ -39,6 +39,26 @@ class Mahasiswa Extends REST_Controller
         
     }
 
+    public function alljadwal_get()
+    {
+        $nim = $this->get('nim');
+
+        $mahasiswa = $this->mhs->getAllJadwal($nim);             
+        
+        if($mahasiswa) {
+            $this->response([
+                'status' => '000',                
+                'data' =>  $mahasiswa
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'Jadwal Not Found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+        
+    }
+
     public function jadwal_get()
     {
         $nim = $this->get('nim');

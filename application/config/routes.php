@@ -60,6 +60,7 @@ $route['translate_uri_dashes'] = TRUE;
 */
 $route['mahasiswa'] = 'api/mahasiswa/detail/nim';
 $route['mahasiswa/(:num)'] = 'api/mahasiswa/detail/nim/$1';
+$route['alljadwal/(:num)'] = 'api/mahasiswa/alljadwal/nim/$1';
 $route['jadwal/(:num)'] = 'api/mahasiswa/jadwal/nim/$1';
 
 $route['mahasiswa/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/mahasiswa/index/id/$1/format/$3$4';
